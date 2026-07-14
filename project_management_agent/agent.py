@@ -1,0 +1,3 @@
+from project_management_agent.agents.project_manager import project_manager
+
+root_agent = project_manager
