@@ -24,3 +24,12 @@ Thumbs.db
 
 # Logs
 *.log
+
+
+# ADK session database
+session.db
+.adk/
+
+# SQLite databases
+*.db
+*.sqlite3
