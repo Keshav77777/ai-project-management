@@ -6,7 +6,8 @@ from project_management_agent.prompts.project_manager_prompt import (
 from project_management_agent.tools.create_project import create_project
 from project_management_agent.tools.delete_project import delete_project
 from project_management_agent.tools.list_projects import list_projects
-
+from project_management_agent.agents.planning_agent import planning_agent
+from project_management_agent.agents.risk_agent import risk_agent
 from project_management_agent.config import MODEL_NAME
 
 project_manager = LlmAgent(
@@ -16,6 +17,10 @@ project_manager = LlmAgent(
     tools=[
         create_project,
         delete_project,
-        list_projects
-        ]
+        list_projects,
+        ],
+    sub_agents=[
+        planning_agent,
+        risk_agent,
+    ]
 )
