@@ -6,6 +6,14 @@ from project_management_agent.prompts.project_manager_prompt import (
 from project_management_agent.tools.create_project import create_project
 from project_management_agent.tools.delete_project import delete_project
 from project_management_agent.tools.list_projects import list_projects
+from project_management_agent.tools.create_task import create_task
+from project_management_agent.tools.list_tasks import list_tasks
+from project_management_agent.tools.update_task_status import update_task_status
+from project_management_agent.tools.delete_task import delete_task
+from project_management_agent.tools.update_task_priority import update_task_priority
+
+
+
 from project_management_agent.agents.planning_agent import planning_agent
 from project_management_agent.agents.risk_agent import risk_agent
 from project_management_agent.config import MODEL_NAME
@@ -18,6 +26,11 @@ project_manager = LlmAgent(
         create_project,
         delete_project,
         list_projects,
+        create_task,
+        list_tasks,
+        update_task_status,
+        update_task_priority,
+        delete_task,
         ],
     sub_agents=[
         planning_agent,
