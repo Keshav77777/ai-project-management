@@ -20,15 +20,13 @@ class VectorStore:
     ids: list[str],
     documents: list[str],
     embeddings: list[list[float]],
+    metadatas: list[dict] | None = None,
     ):
-        """
-        Store documents and their embeddings.
-        """
-
         self.collection.add(
             ids=ids,
             documents=documents,
             embeddings=embeddings,
+            metadatas=metadatas,
         )
 
     def search(

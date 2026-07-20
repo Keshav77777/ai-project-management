@@ -285,18 +285,4 @@ At the end of Module 5, the AI Project Management Agent can:
 
 ---
 
-# Next Module
-
-## Module 6 – Project Dashboard & Analytics
-
-In the next module, the agent will move beyond CRUD operations and provide project insights, including:
-
-- Project summaries
-- Task statistics
-- Pending vs Completed tasks
-- Project progress
-- High-priority task reporting
-- Analytics dashboard
-- Intelligent project overview
-
 This will transform the agent from a CRUD assistant into an AI-powered Project Management Copilot.
