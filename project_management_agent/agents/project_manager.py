@@ -17,10 +17,18 @@ from project_management_agent.tools.update_task_priority import update_task_prio
 from project_management_agent.agents.planning_agent import planning_agent
 from project_management_agent.agents.risk_agent import risk_agent
 from project_management_agent.config import MODEL_NAME
+from project_management_agent.agents.knowledge_agent import knowledge_agent
+
+
 
 project_manager = LlmAgent(
     name="project_manager",
     model=MODEL_NAME,
+    description=(
+        "Coordinates project management activities and delegates "
+        "planning, risk analysis, and document-based queries "
+        "to specialized agents."
+    ),
     instruction=PROJECT_MANAGER_PROMPT,
     tools=[
         create_project,
@@ -31,9 +39,10 @@ project_manager = LlmAgent(
         update_task_status,
         update_task_priority,
         delete_task,
-        ],
+    ],
     sub_agents=[
         planning_agent,
         risk_agent,
-    ]
+        knowledge_agent,
+    ],
 )

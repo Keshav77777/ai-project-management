@@ -33,3 +33,8 @@ session.db
 # SQLite databases
 *.db
 *.sqlite3
+
+
+test/
+chroma_db/
+*.pdf
