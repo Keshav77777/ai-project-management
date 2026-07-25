@@ -38,3 +38,7 @@ session.db
 test/
 chroma_db/
 *.pdf
+
+ai_project_management.egg-info/
+
+uv.lock
