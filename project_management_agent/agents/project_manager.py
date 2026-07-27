@@ -3,6 +3,7 @@ from google.adk.agents import LlmAgent
 from project_management_agent.prompts.project_manager_prompt import (
     PROJECT_MANAGER_PROMPT,
 )
+from project_management_agent.mcp.client import project_management_mcp
 from project_management_agent.tools.create_project import create_project
 from project_management_agent.tools.delete_project import delete_project
 from project_management_agent.tools.list_projects import list_projects
@@ -31,14 +32,15 @@ project_manager = LlmAgent(
     ),
     instruction=PROJECT_MANAGER_PROMPT,
     tools=[
-        create_project,
-        delete_project,
-        list_projects,
-        create_task,
-        list_tasks,
-        update_task_status,
-        update_task_priority,
-        delete_task,
+        # create_project,
+        # delete_project,
+        # list_projects,
+        # create_task,
+        # list_tasks,
+        # update_task_status,
+        # update_task_priority,
+        # delete_task,
+        project_management_mcp,
     ],
     sub_agents=[
         planning_agent,

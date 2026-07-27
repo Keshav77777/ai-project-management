@@ -1,7 +1,6 @@
 from project_management_agent.database.database import database_manager
 from project_management_agent.models.task import Task
 
-
 class TaskStore:
     """
     Service layer for Task operations.
@@ -27,6 +26,9 @@ class TaskStore:
         status: str = "Pending",
         priority: str = "Medium",
     ) -> str:
+        """
+        Creates a new task for a project.
+        """
 
         project = database_manager.get_project_by_name(project_name)
 

@@ -1,3 +1,4 @@
+from project_management_agent.memory.memory_manager import memory_manager
 from project_management_agent.services.task_store import task_store
 
 
@@ -13,7 +14,12 @@ def update_task_status(title: str, status: str) -> str:
         Success or error message.
     """
 
-    return task_store.update_task_status(
+    result = task_store.update_task_status(
         title=title,
         status=status,
     )
+
+    if result.startswith(f"Task '{title}' status updated"):
+        memory_manager.set_current_task(title)
+
+    return result
